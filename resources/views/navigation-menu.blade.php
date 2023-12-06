@@ -27,9 +27,53 @@
                     <x-jet-nav-link href="{{ route('admin.types.index') }}" :active="request()->routeIs('admin.types.index')">
                         {{ __('Type') }}
                     </x-jet-nav-link>
+              
+
+                    <div class="relative mt-6">
+                        <x-jet-dropdown align="right" width="48">
+                            <x-slot name="trigger">
+        
+                                <button class="flex items-center text-sm font-medium text-gray-500 transition duration-150 ease-in-out hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300">
+                                    <div>Admin</div>
+        
+                                    <div class="ml-1">
+                                        <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                        </svg>
+                                    </div>
+                                </button>
+        
+                            </x-slot>
+        
+                            <x-slot name="content">
+        
+                                <!-- User Management -->
+                                <div class="block px-4 py-2 text-xs text-gray-400">
+                                    {{ __('Arus Kas') }}
+                                </div>
+        
+                                <x-jet-dropdown-link href="{{ route('admin.users.index') }}">
+                                    {{ __('Kas Masuk') }}
+                                </x-jet-dropdown-link>
+
+                                <x-jet-dropdown-link href="{{ route('admin.users.index') }}">
+                                    {{ __('Kas Keluar') }}
+                                </x-jet-dropdown-link>
+
+                                <x-jet-dropdown-link href="{{ route('admin.users.index') }}">
+                                    {{ __('Keuntungan') }}
+                                </x-jet-dropdown-link>
+        
+                            </x-slot>
+        
+                        </x-jet-dropdown>
+                        </div>
+
                     <x-jet-nav-link href="{{ route('admin.users.index') }}" :active="request()->routeIs('admin.users.index')">
                         {{ __('Users') }}
                     </x-jet-nav-link>
+                    
+                    
 
                 </div>
             </div>
@@ -171,7 +215,7 @@
                 {{ __('Dashboard') }}
             </x-jet-responsive-nav-link>
             <x-jet-responsive-nav-link href="{{ route('admin.bookings.index') }}" :active="request()->routeIs('admin.bookings.index')">
-                {{ __('Dashboard') }}
+                {{ __('Booking') }}
             </x-jet-responsive-nav-link>
             <x-jet-responsive-nav-link href="{{ route('admin.items.index') }}" :active="request()->routeIs('admin.items.index')">
                 {{ __('Item') }}
@@ -182,8 +226,18 @@
             <x-jet-responsive-nav-link href="{{ route('admin.types.index') }}" :active="request()->routeIs('admin.types.index')">
                 {{ __('Type') }}
             </x-jet-responsive-nav-link>
+            <x-jet-responsive-nav-link href="{{ route('admin.types.index') }}" :active="request()->routeIs('admin.types.index')">
+                {{ __('Kas Masuk') }}
+            </x-jet-responsive-nav-link>
+            <x-jet-responsive-nav-link href="{{ route('admin.types.index') }}" :active="request()->routeIs('admin.types.index')">
+                {{ __('Kas Keluar') }}
+            </x-jet-responsive-nav-link>
+            <x-jet-responsive-nav-link href="{{ route('admin.types.index') }}" :active="request()->routeIs('admin.types.index')">
+                {{ __('Keuntungan') }}
+            </x-jet-responsive-nav-link>
+           
             <x-jet-responsive-nav-link href="{{ route('admin.users.index') }}" :active="request()->routeIs('admin.users.index')">
-                {{ __('Type') }}
+                {{ __('User') }}
             </x-jet-responsive-nav-link>
         </div>
 

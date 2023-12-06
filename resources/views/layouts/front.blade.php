@@ -57,8 +57,8 @@
                             class="flex flex-col w-full ml-auto lg:w-auto gap-4 lg:gap-[50px] lg:items-center lg:flex-row">
                             <a href="{{ route('front.index') }}" class="nav-link-item">Landing</a>
                             <a href="{{ route('front.catalog') }}" class="nav-link-item">Catalog</a>
-                            <a href="#!" class="nav-link-item">Benefits</a>
-                            <a href="#!" class="nav-link-item">Stories</a>
+                            <a href="#!" class="nav-link-item">History</a>
+                            <a href="#!" class="nav-link-item">About</a>
                             <a href="#!" class="nav-link-item">Maps</a>
                         </div>
                         @auth
