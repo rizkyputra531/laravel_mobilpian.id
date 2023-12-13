@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\BrandController as AdminBrandController;
 use App\Http\Controllers\Admin\TypeController as AdminTypeController;
 use App\Http\Controllers\Admin\ItemController as AdminItemController;
 use App\Http\Controllers\Admin\BookingController as AdminBookingController;
+use App\Http\Controllers\Admin\KasKeluarController as AdminKasKeluarController;
 use App\Http\Controllers\Front\CatalogController;
 use App\Http\Controllers\Front\LandingController;
 use App\Http\Controllers\Front\DetailController;
@@ -59,4 +60,5 @@ Route::prefix('admin')->name('admin.')->middleware([
     Route::resource('items', AdminItemController::class);
     Route::resource('bookings', AdminBookingController::class);
     Route::resource('users', AdminUsersController::class);
+    Route::resource('kaskeluars', AdminKasKeluarController::class);
 });

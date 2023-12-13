@@ -17,6 +17,8 @@
         "vite": "^4.0.0"
     },
     "dependencies": {
+        "@themesberg/tailwind-datepicker": "^1.1.0",
+        "flowbite": "^2.2.0",
         "tw-elements": "^1.0.0"
     }
 }

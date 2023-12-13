@@ -63,7 +63,6 @@
                             <thead>
                                 <tr>
                                     <th style="max-width: 1%">ID</th>
-                                   <!--<th style="max-width: 1%">NO</th>-->
                                     <th>Nama</th>
                                     <th>Slug</th>
                                     <th style="max-width: 1%">Aksi</th>

@@ -13,14 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('kas_masuk', function (Blueprint $table) {
+        Schema::create('kaskeluars', function (Blueprint $table) {
             $table->id();
 
             $table->string('name')->nullable();
 
-            $table->foreignId('user_id')->constrained();
             
-            $table->string('jenis_pemasukan')->nullable();
+            $table->string('jenis_pengeluaran')->nullable();
             $table->string('keterangan')->nullable();
             $table->date('tanggal')->nullable();
             $table->integer('quantity')->nullable();
@@ -39,6 +38,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kas_masuk');
+        Schema::dropIfExists('kaskeluars');
     }
 };
