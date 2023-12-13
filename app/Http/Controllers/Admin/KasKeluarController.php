@@ -19,7 +19,13 @@ class KasKeluarController extends Controller
      */
     public function index()
     {
-        // script untuk datatables, AJAX
+        // $data = KasKeluar::get();
+        // $data = $data->sortByDesc(function ($data) {
+        //     return $data->total->sum('total');
+        // });
+        // // script untuk datatables, AJAX
+
+        $data = KasKeluar::all()->sum('total');
         if (request()->ajax()) {
             $query = KasKeluar::query();
 
@@ -38,12 +44,20 @@ class KasKeluarController extends Controller
                         </form>';
                 })
                 ->rawColumns(['action'])
-                ->make();
+                ->make()
+                // ->with('total', function() use ($query) {
+                //     return $query->sum('total');
+                    
+                // })
+                ;
         }
 
 
         // script untuk return halaman view brand
-        return view('admin.kaskeluars.index');
+        // return view('admin.kaskeluars.index');
+        return view('admin.kaskeluars.index', [
+            'kas_keluar' => $data,
+        ]);
     }
 
     /**
