@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\KasKeluarEditRequest;
 use App\Http\Requests\KasKeluarRequest;
 use App\Models\KasKeluar;
 use Carbon\Carbon;
@@ -100,7 +101,10 @@ class KasKeluarController extends Controller
     public function edit(KasKeluar $kaskeluar)
     {
         //
-        $kaskeluar['tanggal'] = date('d-m-Y');
+        $kaskeluar['tanggal'] = date('m/d/Y');
+        // $date = $kaskeluar->tanggal->format('m-d-Y');
+        // $kaskeluar['tanggal'] = Carbon::createFromFormat('m/d/Y', $request->tanggal)->format('Y-m-d');
+        
         return view('admin.kaskeluars.edit', [
             'kas_keluar' => $kaskeluar,
         ]);
@@ -113,10 +117,17 @@ class KasKeluarController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(KasKeluarRequest $request, KasKeluar $kaskeluar)
     {
         //
-        return view('admin.kaskeluars.create');
+        $data = $request->all();
+        $data['tanggal'] = Carbon::createFromFormat('m/d/Y', $request->tanggal)->format('Y-m-d');
+        
+        $kaskeluar->update($data);
+
+        return redirect()->route('admin.kaskeluars.index');
+
+        // return view('admin.kaskeluars.create');
     }
 
     /**
