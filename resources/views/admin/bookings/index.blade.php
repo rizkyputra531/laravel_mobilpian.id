@@ -51,12 +51,14 @@
           },
           {
             data: 'start_date',
-            name: 'start_date'
+            name: 'start_date',
+            width: '5%',
 
           },
           {
             data: 'end_date',
-            name: 'end_date'
+            name: 'end_date',
+            width: '5%',
 
           },
           {
@@ -71,7 +73,9 @@
           },
           {
             data: 'total_price',
-            name: 'total_price'
+            name: 'total_price',
+            width: '10%',
+            render : $.fn.dataTable.render.number( '.', ',', 0, 'Rp ' ),
 
           },
           {

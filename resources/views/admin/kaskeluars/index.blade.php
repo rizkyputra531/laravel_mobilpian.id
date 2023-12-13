@@ -59,12 +59,14 @@
           },
           {
             data: 'harga',
-            name: 'harga'
+            name: 'harga',
+            render : $.fn.dataTable.render.number( '.', ',', 0, 'Rp ' ),
 
           },
           {
             data: 'total',
-            name: 'total'
+            name: 'total',
+            render : $.fn.dataTable.render.number( '.', ',', 0, 'Rp ' ),
 
           },
           {

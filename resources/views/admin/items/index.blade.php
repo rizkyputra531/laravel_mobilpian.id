@@ -31,7 +31,7 @@
             name: 'thumbnail',
             orderable: false,
             searchable: false,
-            width: '20%',
+            width: '10%',
           },
           {
             data: 'name',
@@ -54,7 +54,9 @@
           },
           {
             data: 'price',
-            name: 'price'
+            name: 'price',
+            width: '10%',
+            render : $.fn.dataTable.render.number( '.', ',', 0, 'Rp ' ),
 
           },
           {
